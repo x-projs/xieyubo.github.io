@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="xyb,xyb@xyb.name"><title>Build Your Kernel For WSL2 · XYB</title><meta name="description" content="Windows 10 2004 will be released to public very soon. It has been released in Windows Insider Program for a long time.
+In this release, the biggest im"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="http://www.gravatar.com/avatar/09b75901b7c35bfe331d7e7fb3721b1b?s=127" style="width:127px;border-radius:127px"><h3 title=""><a href="/">XYB</a></h3><div class="description"><p>Tech changes the world.</p></div></div></div><ul class="social-links"><li><a href="http://github.com/xieyubo" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li><li><a href="mailto:xyb@xyb.name"><i class="fa fa-at"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me" target="_blank" rel="noopener"> CaiCai</a><span>,</span><a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank" rel="noopener"> Ben </a><span>&</span><a href="https://github.com/xieyubo/hexo-theme-Anatole" target="_blank" rel="noopener"> xyb</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h2><a>Build Your Kernel For WSL2</a></h2></div><div class="post-content"><p>Windows 10 2004 will be released to public very soon. It has been released in Windows Insider Program for a long time.
+In this release, the biggest improvement to me is WSL2. In WSL2, windows actually hosted a virtual machine, and WSL
+is actually running inside the virtual machine. That means you can run a real linux kernel and even you can build your
+kernel and run it. It’s very convenient for study Linux kernel. You can very easily switch kernels.</p>
+<p>Build linux kernel is actually very easy, you just need a Linux environment. Yes, you can also build a kernel in side
+WSL. In this article, I’ll use Ubuntu which is the one of the most popular Linux distribution. You need install the
+following packages:</p>
+<pre><code>sudo apt install g++ make flex bison libssl-dev libelf-dev bc
+</code></pre>
+<p>Then you can download a copy of Linux kernel source code from <a href="https://www.kernel.org" target="_blank" rel="noopener">https://www.kernel.org</a>. Currently,
+the official Microsoft WSL release uses 4.19.x. But I always like try new things, so let’s download 5.5.9.</p>
+<p>Use the following command to extract the kernel source code:</p>
+<pre><code>tar xvf linux-5.5.9.tar.xz
+cd linux-5.5.9
+</code></pre>
+<p>Now, you need a configure file. The config file saves the kernel options. Lot all of the kernel features are supported
+by Windows. And some kernel features are used for kernel developer debug only. So you need the config file to turn off
+those features. I think the best way to get the config file is copying from Microsoft WSL repository. Microsoft WSL
+team has turned off those options for you already. You can download from <a href="https://github.com/microsoft/WSL2-Linux-Kernel/blob/master/Microsoft/config-wsl" target="_blank" rel="noopener">https://github.com/microsoft/WSL2-Linux-Kernel/blob/master/Microsoft/config-wsl</a>.</p>
+<p>Create a folder <code>Microsoft</code> under linux-5.5.9, and copy the put the config file in. Then you can build the kernel now:</p>
+<pre><code>make KCONFIG_CONFIG=Microsoft/config-wsl
+</code></pre>
+<p>If you use linux 4.19.x, I believe you won’t hit any issue. But if you use linux 5.5.9 like me, you will be ask for some
+questions also. This is because the config file you download is for 4.19.x, in 5.5.9, there are a lot of new options added.
+So you need answer “Yes” or “No” to enable or disable these new options. You can answer “No” for all questions, or you can
+download the config file from my repository: <a href="https://github.com/xieyubo/WSL2-Linux-Kernel/blob/wsl-xyb-port-5.5.y/Microsoft/config-wsl" target="_blank" rel="noopener">https://github.com/xieyubo/WSL2-Linux-Kernel/blob/wsl-xyb-port-5.5.y/Microsoft/config-wsl</a>.
+I’ve answered those questions for you already.</p>
+<p>After build finish, you can copy the kernel to a windows folder. The name of the kernel file under build folder is <code>bzImage</code>,
+we rename it to <code>kernel</code> which is used in WSL2:</p>
+<pre><code>cp arch/x86_64/boot/bzImage /mnt/c/temp/kernel
+</code></pre>
+<p>Now our kernel is ready to use. But before we using it, please make sure you are enable WSL2 and switch your existed WSL instances
+from WSL1 to WSL2. You can follow the instructions on <a href="http://aka.ms/wsl2" target="_blank" rel="noopener">http://aka.ms/wsl2</a>.</p>
+<p>OK, let’s open a Windows cmd window and shutdown WSL2 virtual machine:</p>
+<pre><code>wsl --shutdown
+</code></pre>
+<p>Goto <code>C:\Windows\System32\lxss\tools</code> folder, use the new kernel file to replace the old one. Re-launch your WSL instance, type:</p>
+<pre><code>uname -r
+</code></pre>
+<p>You should see the kernel version is <code>5.5.9</code> now.</p>
+<p><img src="/images/build-your-kernel-for-wsl2-1.png" alt=""></p>
+<p>Some people might be confused: why the original kernel file is around 50 MB, but the new one is just around 9 MB? Do you remember
+the original name of the new kernel file is <code>bzImage</code>? <code>bzImage</code> is actually a kind of compressed file format. It compresses the
+real kernel file (vmlinux which is around 50 MB), and adds code which can decompress the real kernel at runtime. The following
+picture comes from <a href="https://en.wikipedia.org/wiki/Vmlinux" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Vmlinux</a> explain the relation ship between <code>vmlinux</code> and <code>bzImage</code> very clear:</p>
+<p><img src="/images/Anatomy-of-bzimage.png" alt=""><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Original path of this picture: <a href="https://en.wikipedia.org/wiki/Vmlinux#/media/File:Anatomy-of-bzimage.png" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Vmlinux#/media/File:Anatomy-of-bzimage.png</a>. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-03-14</span><i class="fa fa-comment-o"></i><a href="/2020/03/14/build-your-kernel-for-wsl2/#comments">Comments</a><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2020/03/14/linux-kernel-bug-for-hyper-v/" title="Linux Kernel Bug For HyperV">prev_post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/02/22/executable-file-cant-be-loaded-in-ubuntu-1910/" title="Executable File Can't Be Loaded in Ubuntu 19.10">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'www-xyb-name';
+var disqus_identifier = '2020/03/14/build-your-kernel-for-wsl2/';
+var disqus_title = 'Build Your Kernel For WSL2';
+var disqus_url = 'https://www.xyb.name/2020/03/14/build-your-kernel-for-wsl2/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-156902054-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-156902054-1');</script></body></html>

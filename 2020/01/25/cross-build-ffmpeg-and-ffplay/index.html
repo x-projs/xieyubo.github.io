@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="xyb,xyb@xyb.name"><title>Cross Build FFmpeg & FFplay for Windows · XYB</title><meta name="description" content="Note: The following example is building for 32 bits. If you want to build for 64 bits, please usex86_64-w64-mingw32 instead of i686-w64-mingw32.
+Build"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="http://www.gravatar.com/avatar/09b75901b7c35bfe331d7e7fb3721b1b?s=127" style="width:127px;border-radius:127px"><h3 title=""><a href="/">XYB</a></h3><div class="description"><p>Tech changes the world.</p></div></div></div><ul class="social-links"><li><a href="http://github.com/xieyubo" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li><li><a href="mailto:xyb@xyb.name"><i class="fa fa-at"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me" target="_blank" rel="noopener"> CaiCai</a><span>,</span><a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank" rel="noopener"> Ben </a><span>&</span><a href="https://github.com/xieyubo/hexo-theme-Anatole" target="_blank" rel="noopener"> xyb</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h2><a>Cross Build FFmpeg &amp; FFplay for Windows</a></h2></div><div class="post-content"><p>Note: The following example is building for 32 bits. If you want to build for 64 bits, please use<br><code>x86_64-w64-mingw32</code> instead of <code>i686-w64-mingw32</code>.</p>
+<h3 id="Build-FFmpeg"><a href="#Build-FFmpeg" class="headerlink" title="Build FFmpeg"></a>Build FFmpeg</h3><p>Install the following packages:</p>
+<pre><code>sudo apt-get update
+sudo apt-get install make nasm gcc mingw-w64</code></pre><p>Build:</p>
+<pre><code>./configure --arch=x86 --target-os=mingw32 --cross-prefix=i686-w64-mingw32- --prefix=/mnt/d/src/ffmpeg/build.d/win/x86
+make -j`nproc` -s
+sudo make install</code></pre><h3 id="Build-FFplay"><a href="#Build-FFplay" class="headerlink" title="Build FFplay"></a>Build FFplay</h3><p>Build SDL2 first:</p>
+<pre><code>cd /tmp
+wget https://www.libsdl.org/release/SDL2-2.0.10.tar.gz
+tar xvzf SDL2-2.0.10.tar.gz
+cd SDL2-2.0.10
+./configure --prefix=/usr/sdl2-win32 --host=i686-w64-mingw32
+make -j`nproc` -s
+sudo make install</code></pre><p>Make a symbol link to i686-w64-mingw32-sdl2-config:</p>
+<pre><code>sudo ln -s /usr/sdl2-win32/bin/sdl2-config /usr/bin/i686-w64-mingw32-sdl2-config</code></pre><p>Now reconfig FFmpeg, it will enable ffplay automatically:</p>
+<pre><code>./configure --arch=x86 --target-os=mingw32 --cross-prefix=i686-w64-mingw32- --prefix=/mnt/d/src/ffmpeg/build.d/win/x86
+make -j`nproc` -s
+sudo make install</code></pre><h3 id="Copy-dependencies-and-run"><a href="#Copy-dependencies-and-run" class="headerlink" title="Copy dependencies and run"></a>Copy dependencies and run</h3><p>Copy required DLLs before running:</p>
+<pre><code>cp /usr/sdl2-win32/bin/SDL2.dll /mnt/d/src/ffmpeg/build.d/win/x86/bin/
+cp /usr/lib/gcc/i686-w64-mingw32/7.3-win32/libgcc_s_sjlj-1.dll /mnt/d/src/ffmpeg/build.d/win/x86/bin/</code></pre><p>You can run ffmpeg &amp; ffplay from windows now.</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-01-25</span><i class="fa fa-comment-o"></i><a href="/2020/01/25/cross-build-ffmpeg-and-ffplay/#comments">Comments</a><i class="fa fa-tag"></i><a class="tag" href="/tags/ffmpeg/" title="ffmpeg">ffmpeg </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2020/01/25/install-multiple-wsl-instances/" title="Install Multiple WSL Instances">prev_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'www-xyb-name';
+var disqus_identifier = '2020/01/25/cross-build-ffmpeg-and-ffplay/';
+var disqus_title = 'Cross Build FFmpeg &amp; FFplay for Windows';
+var disqus_url = 'https://www.xyb.name/2020/01/25/cross-build-ffmpeg-and-ffplay/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-156902054-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-156902054-1');</script></body></html>
