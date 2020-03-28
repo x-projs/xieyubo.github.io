@@ -37,6 +37,17 @@ a zip file. You can use 7-zip to open it or change the file extention name to <c
 <p>Do the same steps and run <code>ubuntu18.04.exe</code> from <code>wsl-2</code> folder. It will use <code>wsl-2</code> as the distribution name. The same, it will
 install the distribution first and active it.</p>
 <p>Use this way, you can create as many WSL instances as you want.</p>
+<p><em>Update on 2020-03-28</em></p>
+<p>I just noticed that Ubuntu actually has a minimal rootfs released: <a href="https://wiki.ubuntu.com/Base" target="_blank" rel="noopener">Ubunt Base</a>.
+So we can use it to create WSL instance directly.</p>
+<p>Let's download <a href="http://cdimage.ubuntu.com/ubuntu-base/releases/19.10/release/ubuntu-base-19.10-base-amd64.tar.gz." target="_blank" rel="noopener">Ubuntu Base 19.10</a>,
+change its name to <code>install.tar.gz</code> and copy it with <a href="https://github.com/xieyubo/WSL-DistroLauncher/releases/download/10b787c/ubuntu18.04.exe" target="_blank" rel="noopener">our modified luncher</a>
+into a same folder: <code>D:\ubuntu-19.10</code>. Double click the launcher. It will create a new WSL instance named as <code>ubuntu-19.10</code> for us.</p>
+<p>There is no <code>sudo</code> in the minimal rootfs, so we need install it maunally. Open a cmd window from Windows and run the following command:</p>
+<pre><code>wsl -d ubuntu-19.10 -u root apt update
+wsl -d ubuntu-19.10 -u root apt install sudo
+</code></pre>
+<p>Your new WSL instance is ready to use now.</p>
 </div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-01-25</span><i class="fa fa-comment-o"></i><a href="/2020/01/25/install-multiple-wsl-instances/#comments">Comments</a><i class="fa fa-tag"></i><a class="tag" href="/tags/linux/" title="linux">linux </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2020/02/21/create-wsl-distribution/" title="Create WSL Distribution">prev_post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/01/25/cross-build-ffmpeg-and-ffplay/" title="Cross Build FFmpeg &amp; FFplay for Windows">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'www-xyb-name';
 var disqus_identifier = '2020/01/25/install-multiple-wsl-instances/';
 var disqus_title = 'Install Multiple WSL Instances';
