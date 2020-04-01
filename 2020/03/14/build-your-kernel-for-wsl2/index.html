@@ -35,11 +35,20 @@ from WSL1 to WSL2. You can follow the instructions on <a href="http://aka.ms/wsl
 <p>OK, let's open a Windows cmd window and shutdown WSL2 virtual machine:</p>
 <pre><code>wsl --shutdown
 </code></pre>
-<p>Goto <code>C:\Windows\System32\lxss\tools</code> folder, use the new kernel file to replace the old one. Re-launch your WSL instance, type:</p>
+<p>Goto <code>C:\Windows\System32\lxss\tools</code>[^1] folder, use the new kernel file to replace the old one. Re-launch your WSL instance, type:</p>
 <pre><code>uname -r
 </code></pre>
 <p>You should see the kernel version is <code>5.5.9</code> now.</p>
 <p><img src="/images/build-your-kernel-for-wsl2-1.png" alt=""></p>
+<p><em><strong>Update on 2020-04-01</strong></em></p>
+<p>Instead of replacing the original <code>kernel</code> file, you can also use global wsl2 configuration file.
+You can create a <code>.wslconfig</code> file under <code>%UserProfile%</code>, and put the following content:</p>
+<pre><code>[wsl2]
+kernel=c:\\tmp\\kernel
+</code></pre>
+<p>You must use absolute windows path and with escaped backslashes. So you can not use <code>\</code> in the path, must use <code>\\</code>. There are some
+other configurations you can specify, please check <a href="https://github.com/MicrosoftDocs/WSL/blob/live/WSL/release-notes.md" target="_blank" rel="noopener">https://github.com/MicrosoftDocs/WSL/blob/live/WSL/release-notes.md</a>, search
+<code>.wslconfig</code>.</p>
 <p>Some people might be confused: why the original kernel file is around 50 MB, but the new one is just around 9 MB? Do you remember
 the original name of the new kernel file is <code>bzImage</code>? <code>bzImage</code> is actually a kind of compressed file format. It compresses the
 real kernel file (vmlinux which is around 50 MB), and adds code which can decompress the real kernel at runtime. The following
