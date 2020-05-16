@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="xyb,xyb@xyb.name"><title>Make VS Code work well under WSL2 with customized kernel · XYB</title><meta name="description" content="Microsoft WSL2 is amazing. But the kernel of the official release version is out of date.
+Fortunately, you can build a new customized kernel and use i"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="http://www.gravatar.com/avatar/09b75901b7c35bfe331d7e7fb3721b1b?s=127" style="width:127px;border-radius:127px"><h3 title=""><a href="/">XYB</a></h3><div class="description"><p>Tech changes the world.</p></div></div></div><ul class="social-links"><li><a href="http://github.com/xieyubo" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li><li><a href="mailto:xyb@xyb.name"><i class="fa fa-at"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me" target="_blank" rel="noopener"> CaiCai</a><span>,</span><a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank" rel="noopener"> Ben </a><span>&</span><a href="https://github.com/xieyubo/hexo-theme-Anatole" target="_blank" rel="noopener"> xyb</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h2><a>Make VS Code work well under WSL2 with customized kernel</a></h2></div><div class="post-content"><p>Microsoft WSL2 is amazing. But the kernel of the official release version is out of date.
+Fortunately, <a href="/2020/03/14/build-your-kernel-for-wsl2/">you can build a new customized kernel and use it</a>.</p>
+<p>Now, issue is comming. Under the new kernel, you will notice <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> can't
+work well. If you type <code>code</code> under WSL, you will see some garbage outpus. This is because VS code uses a
+naive way to detect the WSL kernel version. It requires the kernel version string follow this pattern:
+<code>x.xx.xx-microsoft-standard</code>. At mean while, its version comparing algorithm is too naive to get the right
+result. For example, if current kernel version is <code>4.19</code> and the new kernel version is <code>5.1</code>. VS code will
+think the new kernel is older than the current kernel because <code>51</code> is smaller than <code>419</code>.</p>
+<p>Wish VS Code can fix this issue in its newer release. But for now, we need do some hacking work. The easiest
+way is generating the same kernel version string as official WSL.</p>
+<p>Let's goto <code>/usr/bin</code> folder, rename <code>uname</code> to <code>uname.real</code>. Then create a new <code>uname</code> file with the following
+content:</p>
+<pre><code>#!/bin/bash
+echo $(/usr/bin/uname.real $@ | sed -E s/[0-9]+.[0-9]+.[0-9]+-microsoft-wsl-xyb-port\\+/4.19.84-microsoft-standard/)
+</code></pre>
+<p><code>-microsoft-wsl-xyb-port</code> is the version pattern of <a href="https://github.com/xieyubo/WSL2-Linux-Kernel/releases/tag/wsl-xyb-port-5.6.y-latest" target="_blank" rel="noopener">my customized kernel</a>.
+You can replace it with the pattern used by your kernel.</p>
+<p>Now, run <code>uname -r</code>, make sure you will see the following line:</p>
+<pre><code>4.19.84-microsoft-standard
+</code></pre>
+<p>Now, you can reinstall vscode-server:</p>
+<ol>
+<li>Under WSL, run <code>rm -rf ~/.vscode-server</code></li>
+<li>Under Windows, run <code>wsl --shutdown</code> and goto <code>%userprofile%\.vscode\extensions</code>, delete <code>ms-vscode-remote.remote-wsl-xxx</code> folder.</li>
+</ol>
+<p>Re-launch WSL, go to any folder you want to open in VS Code, type <code>code .</code>. VS code should work as normal now.</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-05-16</span><i class="fa fa-comment-o"></i><a href="/2020/05/16/make-vs-code-work-well-under-wsl2-with-customized-kernel/#comments">Comments</a><i class="fa fa-tag"></i><a class="tag" href="/tags/linux-vscode/" title="linux vscode">linux vscode </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/03/14/linux-kernel-bug-for-hyper-v/" title="Linux Kernel Bug For HyperV">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'www-xyb-name';
+var disqus_identifier = '2020/05/16/make-vs-code-work-well-under-wsl2-with-customized-kernel/';
+var disqus_title = 'Make VS Code work well under WSL2 with customized kernel';
+var disqus_url = 'https://www.xyb.name/2020/05/16/make-vs-code-work-well-under-wsl2-with-customized-kernel/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-156902054-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-156902054-1');</script></body></html>
