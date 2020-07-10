@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="xyb,xyb@xyb.name"><title>Enable HTTPS And Root Domain On Azure CDN · XYB</title><meta name="description" content="In the previous post, we introduced how to enable
+HTTPS and custom domain on azure storage static website. In this post, we will introduce how to enab"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="http://www.gravatar.com/avatar/09b75901b7c35bfe331d7e7fb3721b1b?s=127" style="width:127px;border-radius:127px"><h3 title=""><a href="/">XYB</a></h3><div class="description"><p>Tech changes the world.</p></div></div></div><ul class="social-links"><li><a href="http://github.com/xieyubo" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li><li><a href="mailto:xyb@xyb.name"><i class="fa fa-at"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me" target="_blank" rel="noopener"> CaiCai</a><span>,</span><a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank" rel="noopener"> Ben </a><span>&</span><a href="https://github.com/xieyubo/hexo-theme-Anatole" target="_blank" rel="noopener"> xyb</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h2><a>Enable HTTPS And Root Domain On Azure CDN</a></h2></div><div class="post-content"><p>In the <a href="/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/">previous post</a>, we introduced how to enable
+HTTPS and custom domain on azure storage static website. In this post, we will introduce how to enable HTTPS and root domain.</p>
+<h3 id="1-Create-SSL-certificate">1. Create SSL certificate</h3>
+<p>Azure doesn't support issuing SSL certificate for root domain, so you need create one by yourself. Fortunately, you don't need speed
+hundreads of dollars to by a SSL certificate, you can use <a href="https://certbot.eff.org/" target="_blank" rel="noopener">certbot</a> to create one for free. Open your Linux
+terminal (if you are on windows, you can use <a href="http://aka.ms/wsl" target="_blank" rel="noopener">WSL</a> as well), type the following command to install certbot:</p>
+<pre><code>sudo apt-get update
+sudo apt-get install certbot
+sudo certbot certonly -d &lt;your_domain&gt; --manual --preferred-challenges dns
+</code></pre>
+<p><code>&lt;your_domain&gt;</code> must be exact as your domain you want to use in Azure CDN (like <code>devtest.pm</code> we used in this example). Certbot will ask
+you some questions, like your email address and whether agree to record your IP address (you must agree it). After that, certbot will
+give you information to configure your domain DNS to verify the domain's ownership:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-1.png" alt=""></p>
+<p>Follow the instruction to modify your DSN record, and press enter to continue. Certbot will create a SSL certificate for you. Please note
+the output of certbot, your certificate path is in it:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-2.png" alt=""></p>
+<p>Certbot separates the certificate and private key file, we need use the following command to combine the two files to create a <code>pfx</code> file
+which is used by azure:</p>
+<pre><code>sudo openssl pkcs12 -export -out &lt;your_domain&gt;.pfx -inkey /etc/letsencrypt/live/&lt;your_domain&gt;/privkey.pem -in /etc/letsencrypt/live/&lt;your_domin&gt;/fullchain.pem
+</code></pre>
+<p>You need input the export password. You can input what you want, but please remember it. You will use the password later.</p>
+<p>The drawback of certbot is the expiration is short. Normally, only three months. Please remember to renew it. Some domain registrars provide
+free certificate which normally has one year expiration. You can also follow your domain registrar's instruction to create SSL certificate.</p>
+<h3 id="2-Import-the-certificate-to-azure">2. Import the certificate to azure</h3>
+<p>We need import the certificate to azure, so that Azure CDN can use it. You need create a <code>Key Vault</code> azure service to store your certificate.
+Login to azure portal, search <code>Key Vault</code>:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-3.png" alt=""></p>
+<p>Click <code>+ Add</code> button, fill some information and click <code>Review + create</code> button to create it:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-4.png" alt=""></p>
+<p>Go to the <code>Key Vault</code> you just created, select <code>Certificates</code> on the left panel, click <code>+ Generate/Import</code> on the right side:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-5.png" alt=""></p>
+<p>Fill some information to import your certificate created in step 1. The password is the export password you use to create the pfx file:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-6.png" alt=""></p>
+<p>After clicking <code>Create</code> button, you can see your certificate has been imported into the azure:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-7.png" alt=""></p>
+<p>Now we need give the permission to Azure CDN to access your certificate. Click the <code>Cloud Shell</code> button on the top of azure portal:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-8.png" alt=""></p>
+<p>Type the following command in the cloud shell:</p>
+<pre><code>New-AzADServicePrincipal -ApplicationId &quot;205478c0-bd83-4e1b-a9d6-db63a3e1e1c8&quot;
+</code></pre>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-9.png" alt=""></p>
+<p>Then go back to <code>Key Vault</code> service, select <code>Access policies</code> on the left panel, click <code>+ Add Access Policy</code>:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-10.png" alt=""></p>
+<p>Search <code>Microsoft.Azure.Cdn</code> (or the guid value <code>205478c0-bd83-4e1b-a9d6-db63a3e1e1c8</code>), select it:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-11.png" alt=""></p>
+<p>Grant <code>Get</code> and <code>List</code> permission in <code>Key permissions</code> and <code>Secret permissions</code>:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-12.png" alt=""></p>
+<p>Remember to <code>Save</code> your changes:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-13.png" alt=""></p>
+<h3 id="3-Add-root-domain-in-Azure-CDN">3. Add root domain in Azure CDN</h3>
+<p>Before adding the root domain in Azure CDN, we need configure the DNS record first so that azure can verify the
+ownership of the domain. Normally, if we want to add a custom domain like <code>www.xxxx.com</code>, we need create a <code>CNAME</code>
+record of our domain pointed to the Azure CDN endpoint, like we does in the <a href="/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/">previous post</a>.</p>
+<p>But for root domain, the situation is different. <code>CNAME</code> record can't be present with other dns records. That means,
+if we add a <code>CNAME</code> record of our domain, we can't add <code>MX</code> record for our domain. That means, we can not use <code>@xxxx.com</code>
+as our email address. So for root domain, we need do some special things: add a <code>CNAME</code> record for domain ownership verification,
+and add a <code>A</code> record for domain resolving.</p>
+<p>For example, if our domain is <code>devtest.pm</code>, and our Azure CDN endpoint is <code>myappdevtest.azureedge.net</code>. We need add
+a <code>CNAME</code> record for <code>**cdnverify**.devtest.pm</code> pointed to <code>**cdnverify**.myappdevtest.azureedge.net</code>, and add a <code>A</code>
+record for <code>devtest.pm</code> pointed to the ip address of <code>myappdevtest.azureedge.net</code>. After that the DNS records looks
+like:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-14.png" alt=""></p>
+<p>After modifying DNS records, let's go back to azure portal, select our Azure CDN endpoint, select <code>Custom domains</code>
+on the left panel, and <code>+ Custom domain</code> on the top, to add our root domain as the custom domain:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-15.png" alt=""></p>
+<p>After adding, click the domain item, to enable HTTPS. Select <code>Use my own certificate</code> in <code>Certificate management type</code>,
+choose your <code>Key vault</code> service name, and select the certificate uploaded in step 2, click <code>Save</code> to apply changes.
+The whole process might take 5 to 10 minutes. Once you see three green check in status, that means your domain is ready
+for use:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-16.png" alt=""></p>
+<p>Open your browser, navigate to <code>https://yourdomain</code>, you should see your application:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-17.png" alt=""></p>
+<h3 id="4-Last-redirect-subdomain-to-root-domain">4. Last, redirect subdomain to root domain</h3>
+<p>Now, we have enable HTTPS on both subdomain (<code>www.xxxx.com</code>) and root domain (<code>xxxx.com</code>). But normally, we only want
+user to use one domain only. Root domain is shorter than subdomain, so we want to redirect all requests from subdomain
+to root domain.</p>
+<p>Let's go to our cdn endpoint, select <code>Rules engine</code> on the left panel, create another rule. Add a condition for <code>Request URL</code>
+and an action for <code>URL Redirect</code> like this:</p>
+<p><img src="/images/enable-https-and-root-domain-on-azure-cdn-18.png" alt=""></p>
+<p>After saving your changes, open browser, navigate to <code>https://www.yourdomain.com</code>, you should be navigated to <code>https://yourdomain.com</code>.</p>
+<p>We are finish. Cheers ~~ <span style='font-size:30px;'>✌</span></p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-07-10</span><i class="fa fa-comment-o"></i><a href="/2020/07/10/enable-https-and-root-domain-on-azure-cdn/#comments">Comments</a><i class="fa fa-tag"></i><a class="tag" href="/tags/azure/" title="azure">azure </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/" title="Enable HTTPS And Custom Domain On Azure Storage Static Website">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'www-xyb-name';
+var disqus_identifier = '2020/07/10/enable-https-and-root-domain-on-azure-cdn/';
+var disqus_title = 'Enable HTTPS And Root Domain On Azure CDN';
+var disqus_url = 'https://www.xyb.name/2020/07/10/enable-https-and-root-domain-on-azure-cdn/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-156902054-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-156902054-1');</script></body></html>
