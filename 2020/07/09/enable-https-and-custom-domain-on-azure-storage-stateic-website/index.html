@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="xyb,xyb@xyb.name"><title>Enable HTTPS And Custom Domain On Azure Storage Static Website · XYB</title><meta name="description" content="In the previous post, we introduced how to host a webassembly application on azure storage.
+In this post, we'll introduce how to enable HTTPS and cust"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="http://www.gravatar.com/avatar/09b75901b7c35bfe331d7e7fb3721b1b?s=127" style="width:127px;border-radius:127px"><h3 title=""><a href="/">XYB</a></h3><div class="description"><p>Tech changes the world.</p></div></div></div><ul class="social-links"><li><a href="http://github.com/xieyubo" target="_blank" rel="noopener"><i class="fa fa-github"></i></a></li><li><a href="mailto:xyb@xyb.name"><i class="fa fa-at"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me" target="_blank" rel="noopener"> CaiCai</a><span>,</span><a href="https://github.com/Ben02/hexo-theme-Anatole" target="_blank" rel="noopener"> Ben </a><span>&</span><a href="https://github.com/xieyubo/hexo-theme-Anatole" target="_blank" rel="noopener"> xyb</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h2><a>Enable HTTPS And Custom Domain On Azure Storage Static Website</a></h2></div><div class="post-content"><p>In the previous post, we introduced how to <a href="/2020/07/09/host-a-webassembly-application-on-azure-storage/">host a webassembly application on azure storage</a>.
+In this post, we'll introduce how to enable HTTPS and custom domain for your application.</p>
+<h3 id="1-Eable-HTTPS">1. Eable HTTPS</h3>
+<p>Azure storage doesn't support HTTPS protocol. You need use Azure CDN to enable HTTPS. Login to azure portal, oepn your storage account, select <code>Azure CDN</code>
+on the left panel, create a new CDN endpoint:</p>
+<p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-1.png" alt=""></p>
+<p>Make sure <code>Origin hostname</code> is pointed to the static website.</p>
+<p>After CDN endpoint is created, click it, you should see the <code>Endpoint hostname</code> on the right side. It should be an https url:</p>
+<p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-2.png" alt=""></p>
+<p>Open the url in the browser, you should see your applicaion.</p>
+<h3 id="2-Redirect-HTTP-to-HTTPS">2. Redirect HTTP to HTTPS</h3>
+<p>HTTP is not secure. You can redirect all HTTP requests to HTTPS endpoint. Select <code>Rules engine</code> on the right side, click <code>Add rule</code> on the top,
+Add a <code>Request Protocol</code> and <code>Url Redirect</code> like this:</p>
+<p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-3.png" alt=""></p>
+<p>After saving, use http protocol to access your CDN endpoint, you should be redirect to https protocol.</p>
+<h3 id="3-Add-custom-domain">3. Add custom domain</h3>
+<p>Click <code>Custom domains</code> on the right side, and click <code>+ Custom domain</code> on the top:</p>
+<p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-4.png" alt=""></p>
+<p>You should be navigated to a page where you can add custom domain:</p>
+<p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-5.png" alt=""></p>
+<p>Before adding your domain, you need go to your domain provider, add a <code>CNAME</code> record of your domain pointed to your CDN endpoint. Like in this example,
+our domain is <code>www.devtest.pm</code>, our endpoint host name is <code>myappdevtest.azureedge.net</code>, so we add a <code>CNAME</code> record in your DNS like this:</p>
+<p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-6.png" alt=""></p>
+<p>After domain added, click it, you can enable HTTPS for your custom domain:</p>
+<p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-7.png" alt=""></p>
+<p>Select <code>Certificate management typ</code> as <code>CDN managed</code>, Azure will create a SSL certificate for your domain and will renew it automatically. All these
+are free.</p>
+<p>The whole process might take 5 to 10 minutes. When it is done, you should be able to access your website via your domain.</p>
+<h3 id="4-Enable-custom-root-domain">4. Enable custom root domain</h3>
+<p>Enabling root domain, like <code>xxxx.dom</code> instead of <code>www.xxx.dom</code>, is more complex. Because azure doesn't support issuing SSL certificate for root domain.
+You need create a SSL certificate by yourself and upload the certificate to azure. I don't want to make this post too long. Let's leave this topic to
+the next post.</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-07-09</span><i class="fa fa-comment-o"></i><a href="/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/#comments">Comments</a><i class="fa fa-tag"></i><a class="tag" href="/tags/azure/" title="azure">azure </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/07/09/host-a-webassembly-application-on-azure-storage/" title="Host A Web Assembly Application On Azure Storage">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'www-xyb-name';
+var disqus_identifier = '2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/';
+var disqus_title = 'Enable HTTPS And Custom Domain On Azure Storage Static Website';
+var disqus_url = 'https://www.xyb.name/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-156902054-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-156902054-1');</script></body></html>
