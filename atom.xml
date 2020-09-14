@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XYB</title>
+  
+  
+  <link href="https://www.xyb.name/atom.xml" rel="self"/>
+  
+  <link href="https://www.xyb.name/"/>
+  <updated>2020-09-11T15:37:47.854Z</updated>
+  <id>https://www.xyb.name/</id>
+  
+  <author>
+    <name>xyb</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为了纪念 —— 《纯C论坛·电子杂志》</title>
+    <link href="https://www.xyb.name/2020/09/11/purec_magazine/"/>
+    <id>https://www.xyb.name/2020/09/11/purec_magazine/</id>
+    <published>2020-09-11T15:27:09.000Z</published>
+    <updated>2020-09-11T15:37:47.854Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>This is a very old article moved from the old blog.</em></p><p>为了纪念 ——《纯C论坛·电子杂志》为了纪念</p><p>——谨以此纪念《纯C论坛·电子杂志》</p><p>…… ……</p><p>偶然间，在计算机内整理文档的时候，又翻出了当年胎死腹中的《纯C论坛·电子杂志》第五期的原稿，一时间，一种久违的感觉又泛上心头。不由得想写些文字来纪念当年这个自己为之投入过相当心血又为自己带来相当快乐的东西。然而几度起笔，却又几度划去，实在不知当从何说起，又当说些什么，也许这各中滋味只有当年的各位编辑能从内心中体会到。</p><p>《纯C论坛·电子杂志》从2004年9月开始策划，2004年10月出第一期，2004年11月出第二期，后改为双月刊并与CSDN合作，2005年1月出第三期，2005年3月出第四期，2005年5月第五期因故停出，至此，整个杂志完全停刊。从开始到现在，不想一晃竟过去一年有半载了。</p><p>杂志的发展也经历了一个很明显的起浮，从第一期、第二期，杂志的发展势头良好，到第三期接近于一个顶峰，随后第四期、第五期又顺着这个顶峰下来了。原因有很多，各位编辑时间及精力有限，未有新鲜血液补弃；国内潜心于低层技术研究的群体太少，稿源艰难；与CSDN合作后，未能取长补短，最后甚至失去了原有的一些自身特点等等，都是此杂志最终停刊的主要原因。</p><p>不过，无论如何，这本曾经存在的杂志，也见证了当年那段人生中的岁月，现想起来，点点滴滴，一一清晰在目。世间没有任何事物可以永恒，结束，也是新的开始。</p><p>这次，我将《纯C论坛·电子杂志》已经正式出版的一至四期，再补上后来胎死腹中还未正式发行的第五期，做成一个合订本，献给我们的编辑，献给关心我们的亲爱的读者，共同纪念那段已然逝去的岁月。</p><p>寥寥数笔，语无伦次，谨以此作为对往事的纪念，让我们为往事干杯，为那段岁月干杯。</p><p>谢煜波（iamxiaohan）</p><p>2006.1.11 于 成都</p><h1>第五期目录</h1><ul><li><p>【 卷首语 】</p><ul><li>纯真，才有希望 刘挺 i</li></ul></li><li><p>【 C与C++ 】</p><ul><li>C Develops Endless Future 孙志岗 1</li><li>Boost源码笔记：Boost::multi_array 谢轩 5</li></ul></li><li><p>【 编译原理 】</p><ul><li>词法分析自动生成器CScanGenner的设计与实现 谢煜波 17</li><li>基于Flex的c/c++代码加亮工具 Tinyfool 28</li></ul></li><li><p>【 病毒研究 】</p><ul><li>解读经典样本EICAR SwordLea 32</li></ul></li><li><p>【 技术资料 】</p><ul><li>AS86的MAN hold(译) 34</li></ul></li><li><p>【 代码分析 】</p><ul><li>一段代码的分析 谢煜波 39</li></ul></li><li><p>【 编辑部通迅 】</p><ul><li>投稿指南 编辑部 I</li></ul></li></ul><h1>总目录</h1><ul><li>【 卷首语 】<ul><li>开篇 孙志岗 1-1</li><li>我心目中的程序员 赵志刚 2-1</li><li>信息时代的挑战与机遇 车万翔 3-1</li><li>我眼中的计算机科学 王宏志 4-1</li><li>纯真，才有希望 刘挺 5-i</li></ul></li><li>【 计算机体系结构 】<ul><li>听大牛们谈未来的体系结构研究方向（一） 王凯峰(译) 2-4</li><li>听大牛们谈未来的体系结构研究方向（二） 王凯峰(译) 4-1</li></ul></li><li>【 编译原理 】<ul><li>工欲善其事，必先利其器——lex和yacc工具介绍 高立琦 1-4</li><li>连接器和加载器（Linkers And Loaders） 刘彦博（译） 1-67</li><li>命令行计算器的实现 高立琦 3-68</li><li>词法分析自动生成器CScanGenner的设计与实现 谢煜波 5-17</li><li>基于Flex的c/c++代码加亮工具 Tinyfool 5-28</li></ul></li><li>【 算法理论 】<ul><li>ACM/ICPC 试题解析 熊蜀光 1-13</li><li>第29届ACM国际大学生程序设计竞赛亚洲区北京赛区预选赛试题题解（一） 哈工大ACM/ICPC组织 2-94</li><li>A题 Finding Nemo解题报告 宋鑫莹 2-95</li><li>B题 Searching the Web解题报告 刘禹 2-97</li><li>C题 Argus解题报告 肖颖 2-98</li><li>H题 The Separator in Grid解题报告 刘子阳 2-99</li><li>推箱子游戏的自动求解 hellwolf 3-91</li><li>车辆牌照识别系统的预处理算法 刘鹏翔 4-59</li></ul></li><li>【 病毒研究 】<ul><li>WinXP SP2对病毒和加密技术的影响 Killer 1-20</li><li>解读经典样本EICAR SwordLea 5-32</li></ul></li><li>【 C与C++ 】<ul><li>剖析Intel IA32架构下C语言及CPU浮点数机制 谢煜波 1-26</li><li>浅析C语言函数传递机制及对变参函数的处理 谢煜波 2-75</li><li>标准C＋＋类std::string的内存共享和Copy-On-Write技术 陈皓 3-75</li><li>深度探索编译器安全检查 杨新开(译) 3-82</li><li>对《浅析C语言函数传递机制及对变参函数的处理》的一点更正 谢煜波 3-89</li><li>C Develops Endless Future 孙志岗 5-1</li><li>Boost源码笔记：Boost::multi_array 谢轩 5-5</li></ul></li><li>【 网络安全 】<ul><li>Linux 下SOCK_RAW的原理和应用 肖颖 1-61</li></ul></li><li>【 操作系统 】<ul><li>操作系统引导探究（Version 0.02） 谢煜波 1-41</li><li>Linux核心（The Linux Kernel）（英汉对译）（一） 毕昕（等） 2-7</li><li>Linux核心（The Linux Kernel）（英汉对译）（二） 毕昕（等） 2-18</li><li>Linux核心（The Linux Kernel）（英汉对译）（三） 毕昕（等） 2-27</li><li>操作系统概念（第六版）（译）（一） 吕建鹏 2-39</li><li>保护模式下8259A芯片编程及中断处理探究（上）（Version 0.02） 谢煜波 2-57</li><li>保护模式下8259A芯片编程及中断处理探究（下）（Version 0.02） 谢煜波 2-65</li><li>《操作系统概念》第二章 计算机系统结构 吕建鹏 3-2</li><li>Linux核心第3章 内存管理 毕昕（等） 3-23</li><li>《操作系统概念》第三章——操作系统结构 吕建鹏 4-4</li><li>Pyos中软盘驱动、DMA及文件系统的实现(上) 谢煜波 4-31</li></ul></li><li>【 数据库原理 】<ul><li>MyBase?物理存储结构的设计 赵锴 4-67</li></ul></li><li>【 系统设计 】<ul><li>设计一个十分简单的16位CPU 黄海 4-72</li><li>Hello China的体系结构 Garry 4-92</li></ul></li><li>【 代码分析 】<ul><li>一段代码的分析 谢煜波 5-39</li></ul></li><li>【 技术资料 】<ul><li>用GDB调试程序 陈皓 3-47</li><li>跟我一起写Makefile 陈皓 4-118</li><li>AS86的MAN hold(译) 5-34</li></ul></li><li>【 论坛视点 】<ul><li>全新的操作系统概念 纯C论坛网友 4-168</li></ul></li><li>【 特 稿 】<ul><li>ACM/ICPC 计算机算法大赛简介 熊蜀光 1-10</li><li>有空的时候，多读读书吧 王凯峰 1-58</li></ul></li><li>【 研究方向综述 】<ul><li>现代信息检索技术简介 车万翔 1-82</li></ul></li><li>【 编辑部通迅 】<ul><li>投稿指南 本刊编辑部 1-85</li><li>读者俱乐部 本刊编辑部 1-87</li><li>本期信息汇总 本刊编辑部 1-88</li><li>SP1版对原版的修订说明 本刊编辑部 1-89</li><li>关于将本刊改为双月刊的决定 本刊编辑部 2-101</li><li>投稿指南 本刊编辑部 2-102</li><li>读者俱乐部（含最新勘误表） 本刊编辑部 2-104</li><li>本期信息汇总 本刊编辑部 2-105</li><li>SP1版对原版的修订说明 本刊编辑部 2-106</li><li>投稿指南 本刊编辑部 3-98</li><li>投稿指南 本刊编辑部 4-170</li><li>勘误表 本刊编辑部 4-172</li><li>投稿指南 本刊编辑部 5-I</li></ul></li></ul><h1>下载</h1><ul><li>第一期 (<a href="/artifacts/pcem-1-sp1-2006.12.04.pdf">pdf</a>) (<a href="/artifacts/pcem-1-attachment-2006.12.04.zip">源代码</a>)</li><li>第二期 (<a href="/artifacts/pcem-2-sp1-2006.12.04.pdf">pdf</a>) (<a href="/artifacts/pcem-2-attachment-2006.12.04.zip">源代码</a>)</li><li>第三期 (<a href="/artifacts/pcem-3-2006.12.04.pdf">pdf</a>) (<a href="/artifacts/pcem-3-attachment-2006.12.04.zip">源代码</a>)</li><li>第四期 (<a href="/artifacts/pcem-4-2006.12.04.pdf">pdf</a>) (<a href="/artifacts/pcem-4-attachment-2006.12.04.zip">源代码</a>)</li><li>第五期 (<a href="/artifacts/pcem-5-2006.12.04.pdf">pdf</a>) (<a href="/artifacts/pcem-5-attachment-2006.12.04.zip">源代码</a>)</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;em&gt;This is a very old article moved from the old blog.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;为了纪念 ——《纯C论坛·电子杂志》
+为了纪念&lt;/p&gt;
+&lt;p&gt;——谨以此纪念《纯C论坛·电子杂志》&lt;/p&gt;
+&lt;p&gt;…… ……&lt;/p&gt;
+&lt;p</summary>
+      
+    
+    
+    
+    
+    <category term="c" scheme="https://www.xyb.name/tags/c/"/>
+    
+    <category term="c++" scheme="https://www.xyb.name/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Correct Local Time In Blazor Webassembly</title>
+    <link href="https://www.xyb.name/2020/08/02/correct-localtime-in-blazor-webassembly/"/>
+    <id>https://www.xyb.name/2020/08/02/correct-localtime-in-blazor-webassembly/</id>
+    <published>2020-08-02T12:04:54.000Z</published>
+    <updated>2020-08-02T12:26:56.188Z</updated>
+    
+    <content type="html"><![CDATA[<p>Blazor webassembly has a bug, it always use UTC time as your local timezone. So no matter what the timezone you are in, <code>.ToLocalTime()</code> will always returning UTC time to you.</p><p>In order to show the correct local time to the user, we need manually adjust the time based on the timezone offset which we can get from javascript. The code looks like this:</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">async</span> Task <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">var</span> builder = WebAssemblyHostBuilder.CreateDefault(args);</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">var</span> host = builder.Build();</span><br><span class="line">        ...</span><br><span class="line">        DateTimeExtension.sTimezoneOffset = <span class="keyword">await</span> host.Services.GetRequiredService&lt;IJSRuntime&gt;().InvokeAsync&lt;<span class="keyword">int</span>&gt;(<span class="string">&quot;eval&quot;</span>, <span class="string">&quot;-new Date().getTimezoneOffset()&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">DateTimeExtension</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> sTimezoneOffset;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DateTime <span class="title">ToRealLocalTime</span>(<span class="params"><span class="keyword">this</span> DateTime datetime</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> datetime.AddMinutes(sTimezoneOffset);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>One thing is worth to mention, the javascript code <code>new Date().getTimezoneOffset()</code> returns <code>UTC - localtime</code> in minutes, so we use <code>-</code> before it to get the delta of <code>localtime - UTC</code> which can be directly used in <code>AddMinutes()</code>.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Blazor webassembly has a bug, it always use UTC time as your local timezone. So no matter what the timezone you are in, &lt;code&gt;.ToLocalTim</summary>
+      
+    
+    
+    
+    
+    <category term="blazor" scheme="https://www.xyb.name/tags/blazor/"/>
+    
+    <category term="wasm" scheme="https://www.xyb.name/tags/wasm/"/>
+    
+    <category term="webassembly" scheme="https://www.xyb.name/tags/webassembly/"/>
+    
+    <category term="blazor-wasm" scheme="https://www.xyb.name/tags/blazor-wasm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bind Unsupported Dom Event in Blazor</title>
+    <link href="https://www.xyb.name/2020/07/30/bind-unsupported-dom-event-in-blazor/"/>
+    <id>https://www.xyb.name/2020/07/30/bind-unsupported-dom-event-in-blazor/</id>
+    <published>2020-07-30T14:04:07.000Z</published>
+    <updated>2020-07-30T14:18:54.183Z</updated>
+    
+    <content type="html"><![CDATA[<p>When user uses mouse middle button to click the HTLM dom element, chrome doesn't fire <code>onclick</code> event.Instead, it fires <code>onauxclick</code> event. In blazor, we normally bind <code>onclick</code> event like this:</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;...&quot;</span> target=<span class="string">&quot;_blank&quot;</span> @onclick=<span class="string">&quot;Click&quot;</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">@code</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Click</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>But you can't do this for <code>onauxclick</code> event. It will throw the following exception in runtime:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">blazor.webassembly.js:1 crit: Microsoft.AspNetCore.Components.WebAssembly.Rendering.WebAssemblyRenderer[100]</span><br><span class="line">      Unhandled exception rendering component: Failed to execute &#39;setAttribute&#39; on &#39;Element&#39;: &#39;@onauxclick&#39; is not a valid attribute name.</span><br><span class="line">      Error: Failed to execute &#39;setAttribute&#39; on &#39;Element&#39;: &#39;@onauxclick&#39; is not a valid attribute name.</span><br><span class="line">          at e.applyAttribute (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;blazor.webassembly.js:1:17247)</span><br><span class="line">          at e.insertElement (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;blazor.webassembly.js:1:16358)</span><br><span class="line">          at e.insertFrame (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;blazor.webassembly.js:1:15235)</span><br><span class="line">          at e.applyEdits (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;blazor.webassembly.js:1:13621)</span><br><span class="line">          at e.updateComponent (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;blazor.webassembly.js:1:12937)</span><br><span class="line">          at Object.t.renderBatch (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;blazor.webassembly.js:1:4622)</span><br><span class="line">          at Object.window.Blazor._internal.renderBatch (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;blazor.webassembly.js:1:34907)</span><br><span class="line">          at _mono_wasm_invoke_js_unmarshalled (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;dotnet.5.0.0-preview.7.20364.11.js:1:165464)</span><br><span class="line">          at wasm_invoke_iiiiii (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;dotnet.wasm:wasm-function[2795]:0x84169)</span><br><span class="line">          at icall_trampoline_dispatch (https:&#x2F;&#x2F;localhost&#x2F;_framework&#x2F;dotnet.wasm:wasm-function[4931]:0xd58a2)</span><br></pre></td></tr></table></figure><p>From the exception, we know that, in this version of blazor, <code>onauxclick</code> is not supported. So you need bind it like this:</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;...&quot;</span> target=<span class="string">&quot;_blank&quot;</span> onauxclick=<span class="string">&quot;@((Action)(() =&gt; Click()))&quot;</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">@code</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Click</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>This way can also be used to bind other events which are not supported natively by blazor.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;When user uses mouse middle button to click the HTLM dom element, chrome doesn&#39;t fire &lt;code&gt;onclick&lt;/code&gt; event.
+Instead, it fires &lt;code</summary>
+      
+    
+    
+    
+    
+    <category term="blazor" scheme="https://www.xyb.name/tags/blazor/"/>
+    
+    <category term="blazor webassembly" scheme="https://www.xyb.name/tags/blazor-webassembly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Workaround For &quot;Unable to decode certificate&quot; Exception In X509Certificate2 Constructor</title>
+    <link href="https://www.xyb.name/2020/07/12/workaround-for-unable-to-decode-certificate-exception-in-x509certificate2-constructor/"/>
+    <id>https://www.xyb.name/2020/07/12/workaround-for-unable-to-decode-certificate-exception-in-x509certificate2-constructor/</id>
+    <published>2020-07-12T16:05:40.000Z</published>
+    <updated>2020-07-12T16:23:11.487Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today when I wrote some code in a blazor web assembly application, I found an interesting issue. The code looks like this:</p><pre><code>var key = &quot;MIIDJjCCAg6gAwIBAgIIeIT...Jaoe79cl3deK1I4z2mlQYsvqCnzHbV/YutU7EJ9HQ&quot;;var bytes = Encoding.UTF8.GetBytes(key);var cert = new X509Certificate2(bytes);</code></pre><p>Logic is simple. I just want to create a certificate from a certificate encoded string. Unfortunately, the above code throwsan exception on line <code>var cert = new X509Certificate2(bytes);</code>:</p><pre><code>Unable to decode certificate.</code></pre><p>I believe it is a bug because the same code works well in a .Net console application. After some investigations, I found aworkaround, adding <code>-----BEGIN CERTIFICATE-----\n</code> and <code>\n-----END CERTIFICATE-----\n</code> to the encoded string, the modifiedcode like this:</p><pre><code>var key = &quot;MIIDJjCCAg6gAwIBAgIIeIT...Jaoe79cl3deK1I4z2mlQYsvqCnzHbV/YutU7EJ9HQ&quot;;key = &quot;-----BEGIN CERTIFICATE-----\n&quot; + key + &quot;\n-----END CERTIFICATE-----\n&quot;;      //&lt;-- Work around!!var bytes = Encoding.UTF8.GetBytes(key);var cert = new X509Certificate2(bytes);</code></pre><p>Now, the exception is gone.</p><p>I spent 2 hours on this issue. Hopefully, google will bring you here when you hit the same issue :). I've already filled a<a href="https://github.com/dotnet/aspnetcore/issues/23881">bug</a> at github, let's wait for the response/fix from the dotnetcore team.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Today when I wrote some code in a blazor web assembly application, I found an interesting issue. The code looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code</summary>
+      
+    
+    
+    
+    
+    <category term="blazor" scheme="https://www.xyb.name/tags/blazor/"/>
+    
+    <category term=".net core" scheme="https://www.xyb.name/tags/net-core/"/>
+    
+    <category term="asp.net core" scheme="https://www.xyb.name/tags/asp-net-core/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enable HTTPS And Root Domain On Azure CDN</title>
+    <link href="https://www.xyb.name/2020/07/10/enable-https-and-root-domain-on-azure-cdn/"/>
+    <id>https://www.xyb.name/2020/07/10/enable-https-and-root-domain-on-azure-cdn/</id>
+    <published>2020-07-10T11:27:03.000Z</published>
+    <updated>2020-07-10T14:06:01.449Z</updated>
+    
+    <content type="html"><![CDATA[<p>In the <a href="/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/">previous post</a>, we introduced how to enableHTTPS and custom domain on azure storage static website. In this post, we will introduce how to enable HTTPS and root domain.</p><h3 id="1-Create-SSL-certificate">1. Create SSL certificate</h3><p>Azure doesn't support issuing SSL certificate for root domain, so you need create one by yourself. Fortunately, you don't need speedhundreads of dollars to by a SSL certificate, you can use <a href="https://certbot.eff.org/">certbot</a> to create one for free. Open your Linuxterminal (if you are on windows, you can use <a href="http://aka.ms/wsl">WSL</a> as well), type the following command to install certbot:</p><pre><code>sudo apt-get updatesudo apt-get install certbotsudo certbot certonly -d &lt;your_domain&gt; --manual --preferred-challenges dns</code></pre><p><code>&lt;your_domain&gt;</code> must be exact as your domain you want to use in Azure CDN (like <code>devtest.pm</code> we used in this example). Certbot will askyou some questions, like your email address and whether agree to record your IP address (you must agree it). After that, certbot willgive you information to configure your domain DNS to verify the domain's ownership:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-1.png" alt=""></p><p>Follow the instruction to modify your DSN record, and press enter to continue. Certbot will create a SSL certificate for you. Please notethe output of certbot, your certificate path is in it:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-2.png" alt=""></p><p>Certbot separates the certificate and private key file, we need use the following command to combine the two files to create a <code>pfx</code> filewhich is used by azure:</p><pre><code>sudo openssl pkcs12 -export -out &lt;your_domain&gt;.pfx -inkey /etc/letsencrypt/live/&lt;your_domain&gt;/privkey.pem -in /etc/letsencrypt/live/&lt;your_domin&gt;/fullchain.pem</code></pre><p>You need input the export password. You can input what you want, but please remember it. You will use the password later.</p><p>The drawback of certbot is the expiration is short. Normally, only three months. Please remember to renew it. Some domain registrars providefree certificate which normally has one year expiration. You can also follow your domain registrar's instruction to create SSL certificate.</p><h3 id="2-Import-the-certificate-to-azure">2. Import the certificate to azure</h3><p>We need import the certificate to azure, so that Azure CDN can use it. You need create a <code>Key Vault</code> azure service to store your certificate.Login to azure portal, search <code>Key Vault</code>:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-3.png" alt=""></p><p>Click <code>+ Add</code> button, fill some information and click <code>Review + create</code> button to create it:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-4.png" alt=""></p><p>Go to the <code>Key Vault</code> you just created, select <code>Certificates</code> on the left panel, click <code>+ Generate/Import</code> on the right side:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-5.png" alt=""></p><p>Fill some information to import your certificate created in step 1. The password is the export password you use to create the pfx file:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-6.png" alt=""></p><p>After clicking <code>Create</code> button, you can see your certificate has been imported into the azure:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-7.png" alt=""></p><p>Now we need give the permission to Azure CDN to access your certificate. Click the <code>Cloud Shell</code> button on the top of azure portal:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-8.png" alt=""></p><p>Type the following command in the cloud shell:</p><pre><code>New-AzADServicePrincipal -ApplicationId &quot;205478c0-bd83-4e1b-a9d6-db63a3e1e1c8&quot;</code></pre><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-9.png" alt=""></p><p>Then go back to <code>Key Vault</code> service, select <code>Access policies</code> on the left panel, click <code>+ Add Access Policy</code>:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-10.png" alt=""></p><p>Search <code>Microsoft.Azure.Cdn</code> (or the guid value <code>205478c0-bd83-4e1b-a9d6-db63a3e1e1c8</code>), select it:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-11.png" alt=""></p><p>Grant <code>Get</code> and <code>List</code> permission in <code>Key permissions</code> and <code>Secret permissions</code>:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-12.png" alt=""></p><p>Remember to <code>Save</code> your changes:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-13.png" alt=""></p><h3 id="3-Add-root-domain-in-Azure-CDN">3. Add root domain in Azure CDN</h3><p>Before adding the root domain in Azure CDN, we need configure the DNS record first so that azure can verify theownership of the domain. Normally, if we want to add a custom domain like <code>www.xxxx.com</code>, we need create a <code>CNAME</code>record of our domain pointed to the Azure CDN endpoint, like we does in the <a href="/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/">previous post</a>.</p><p>But for root domain, the situation is different. <code>CNAME</code> record can't be present with other dns records. That means,if we add a <code>CNAME</code> record of our domain, we can't add <code>MX</code> record for our domain. That means, we can not use <code>@xxxx.com</code>as our email address. So for root domain, we need do some special things: add a <code>CNAME</code> record for domain ownership verification,and add a <code>A</code> record for domain resolving.</p><p>For example, if our domain is <code>devtest.pm</code>, and our Azure CDN endpoint is <code>myappdevtest.azureedge.net</code>. We need adda <code>CNAME</code> record for <code>**cdnverify**.devtest.pm</code> pointed to <code>**cdnverify**.myappdevtest.azureedge.net</code>, and add a <code>A</code>record for <code>devtest.pm</code> pointed to the ip address of <code>myappdevtest.azureedge.net</code>. After that the DNS records lookslike:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-14.png" alt=""></p><p>After modifying DNS records, let's go back to azure portal, select our Azure CDN endpoint, select <code>Custom domains</code>on the left panel, and <code>+ Custom domain</code> on the top, to add our root domain as the custom domain:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-15.png" alt=""></p><p>After adding, click the domain item, to enable HTTPS. Select <code>Use my own certificate</code> in <code>Certificate management type</code>,choose your <code>Key vault</code> service name, and select the certificate uploaded in step 2, click <code>Save</code> to apply changes.The whole process might take 5 to 10 minutes. Once you see three green check in status, that means your domain is readyfor use:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-16.png" alt=""></p><p>Open your browser, navigate to <code>https://yourdomain</code>, you should see your application:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-17.png" alt=""></p><h3 id="4-Last-redirect-subdomain-to-root-domain">4. Last, redirect subdomain to root domain</h3><p>Now, we have enable HTTPS on both subdomain (<code>www.xxxx.com</code>) and root domain (<code>xxxx.com</code>). But normally, we only wantuser to use one domain only. Root domain is shorter than subdomain, so we want to redirect all requests from subdomainto root domain.</p><p>Let's go to our cdn endpoint, select <code>Rules engine</code> on the left panel, create another rule. Add a condition for <code>Request URL</code>and an action for <code>URL Redirect</code> like this:</p><p><img src="/images/enable-https-and-root-domain-on-azure-cdn-18.png" alt=""></p><p>After saving your changes, open browser, navigate to <code>https://www.yourdomain.com</code>, you should be navigated to <code>https://yourdomain.com</code>.</p><p>We are finish. Cheers ~~ <span style='font-size:30px;'>✌</span></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;In the &lt;a href=&quot;/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/&quot;&gt;previous post&lt;/a&gt;, we introduced how to ena</summary>
+      
+    
+    
+    
+    
+    <category term="azure" scheme="https://www.xyb.name/tags/azure/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enable HTTPS And Custom Domain On Azure Storage Static Website</title>
+    <link href="https://www.xyb.name/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/"/>
+    <id>https://www.xyb.name/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/</id>
+    <published>2020-07-10T01:51:33.000Z</published>
+    <updated>2020-07-10T11:28:27.801Z</updated>
+    
+    <content type="html"><![CDATA[<p>In the previous post, we introduced how to <a href="/2020/07/09/host-a-webassembly-application-on-azure-storage/">host a webassembly application on azure storage</a>.In this post, we'll introduce how to enable HTTPS and custom domain for your application.</p><h3 id="1-Eable-HTTPS">1. Eable HTTPS</h3><p>Azure storage doesn't support HTTPS protocol. You need use Azure CDN to enable HTTPS. Login to azure portal, oepn your storage account, select <code>Azure CDN</code>on the left panel, create a new CDN endpoint:</p><p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-1.png" alt=""></p><p>Make sure <code>Origin hostname</code> is pointed to the static website.</p><p>After CDN endpoint is created, click it, you should see the <code>Endpoint hostname</code> on the right side. It should be an https url:</p><p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-2.png" alt=""></p><p>Open the url in the browser, you should see your applicaion.</p><h3 id="2-Redirect-HTTP-to-HTTPS">2. Redirect HTTP to HTTPS</h3><p>HTTP is not secure. You can redirect all HTTP requests to HTTPS endpoint. Select <code>Rules engine</code> on the right side, click <code>Add rule</code> on the top,Add a <code>Request Protocol</code> and <code>Url Redirect</code> like this:</p><p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-3.png" alt=""></p><p>After saving, use http protocol to access your CDN endpoint, you should be redirect to https protocol.</p><h3 id="3-Add-custom-domain">3. Add custom domain</h3><p>Click <code>Custom domains</code> on the right side, and click <code>+ Custom domain</code> on the top:</p><p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-4.png" alt=""></p><p>You should be navigated to a page where you can add custom domain:</p><p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-5.png" alt=""></p><p>Before adding your domain, you need go to your domain provider, add a <code>CNAME</code> record of your domain pointed to your CDN endpoint. Like in this example,our domain is <code>www.devtest.pm</code>, our endpoint host name is <code>myappdevtest.azureedge.net</code>, so we add a <code>CNAME</code> record in your DNS like this:</p><p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-6.png" alt=""></p><p>After domain added, click it, you can enable HTTPS for your custom domain:</p><p><img src="/images/enable-https-and-custom-domain-on-azure-storage-static-website-7.png" alt=""></p><p>Select <code>Certificate management typ</code> as <code>CDN managed</code>, Azure will create a SSL certificate for your domain and will renew it automatically. All theseare free.</p><p>The whole process might take 5 to 10 minutes. When it is done, you should be able to access your website via your domain.</p><h3 id="4-Enable-custom-root-domain">4. Enable custom root domain</h3><p>Enabling root domain, like <code>xxxx.dom</code> instead of <code>www.xxx.dom</code>, is more complex. Because azure doesn't support issuing SSL certificate for root domain.You need create a SSL certificate by yourself and upload the certificate to azure. I don't want to make this post too long. Let's leave this topic tothe <a href="/2020/07/10/enable-https-and-root-domain-on-azure-cdn/">next post</a>.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;In the previous post, we introduced how to &lt;a href=&quot;/2020/07/09/host-a-webassembly-application-on-azure-storage/&quot;&gt;host a webassembly appl</summary>
+      
+    
+    
+    
+    
+    <category term="azure" scheme="https://www.xyb.name/tags/azure/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Host A Web Assembly Application On Azure Storage</title>
+    <link href="https://www.xyb.name/2020/07/09/host-a-webassembly-application-on-azure-storage/"/>
+    <id>https://www.xyb.name/2020/07/09/host-a-webassembly-application-on-azure-storage/</id>
+    <published>2020-07-10T00:04:57.000Z</published>
+    <updated>2020-07-10T02:03:57.276Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-Create-a-web-assembly-application">1. Create a web assembly application</h3><p>Using <a href="https://blazor.net/">DotNetCore Blazor Framework</a> framework to create a web assembly applicationis very easy. Just install <a href="https://dotnet.microsoft.com/download">DotNetCore</a>, and type the followingcommand:</p><pre><code>dotnet new blazorwasm -n MyApp</code></pre><p>It will create a web assembly application for you. Goto folder <code>MyApp</code>, type:</p><pre><code>dotnet run</code></pre><p>Then you can launch your browser, navigate to <code>https://localhost:5001</code>, you should see the application:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-1.png" alt=""></p><p>Type the following command to publish your application:</p><pre><code>dotnet publich -c Release</code></pre><p>Your application will be published into: <code>MyApp\bin\Release\netstandard2.1\publish\</code>. There is a <code>wwwroot</code>folder under that publishing location. The next step is publish the <code>wwwroot</code> folder to azure storage asa static website.</p><h3 id="2-Create-an-azure-storage-account-and-enable-static-website">2. Create an azure storage account and enable static website</h3><p>Login to azure portal, create a storage account:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-2.png" alt=""></p><p>Please make sure <code>Account kind</code> is <code>StorageV2</code>. Only this one supports static website.</p><p>Go to the storage account just created, select <code>Static website</code> on the left panel to enable it:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-3.png" alt=""></p><p>Make sure both <code>Index document name</code> and <code>Error document path</code> are filled with <code>index.html</code>.</p><p>Select <code>Storage Explorer</code> on the left panel, open <code>BLOB CONTAINERS</code> node, you should see a <code>$web</code> node.</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-4.png" alt=""></p><h3 id="3-Upload-application">3. Upload application</h3><p>Install azure cli from <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">here</a>. Type <code>az login</code>to login your account. Go to the <code>wwwroot</code> folder which is published in step 1, type the following commandto upload your application:</p><pre><code>az storage blob upload-batch -d $web -s . --account-name &lt;your_storage_account_name&gt;</code></pre><p>After uploading, your <code>$web</code> container should be looked like this:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-5.png" alt=""></p><p>Go into <code>$web &gt; _framework &gt; wasm</code>, make sure the <code>CONTENT TYPE</code> of the file <code>dotnet.wasm</code> and <code>dotnet.wasm.gz</code>are <code>application/wasm</code>:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-6.png" alt=""></p><p>If not, right click the file, select <code>properties...</code>, and change it:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-7.png" alt=""></p><h3 id="4-Verify">4. Verify</h3><p>Go back to <code>Static website</code> on left panel, you should see the <code>Primary endpoint</code> on the right panel:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-8.png" alt=""></p><p>Paste that address in your browser, you should see your application:</p><p><img src="/images/host-a-webassembly-application-on-azure-storage-9.png" alt=""></p><h3 id="5-Next">5. Next</h3><p>In the next post, we will see how to <a href="/2020/07/09/enable-https-and-custom-domain-on-azure-storage-stateic-website/">enable HTTPS and custom domain for your application</a>.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1-Create-a-web-assembly-application&quot;&gt;1. Create a web assembly application&lt;/h3&gt;
+&lt;p&gt;Using &lt;a href=&quot;https://blazor.net/&quot;&gt;DotNetCore Bla</summary>
+      
+    
+    
+    
+    
+    <category term="webassembly" scheme="https://www.xyb.name/tags/webassembly/"/>
+    
+    <category term="azure" scheme="https://www.xyb.name/tags/azure/"/>
+    
+    <category term="spa" scheme="https://www.xyb.name/tags/spa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Install Ubuntu Desktop Under WSL2</title>
+    <link href="https://www.xyb.name/2020/05/31/install-ubuntu-desktop-under-wsl2/"/>
+    <id>https://www.xyb.name/2020/05/31/install-ubuntu-desktop-under-wsl2/</id>
+    <published>2020-06-01T00:37:21.000Z</published>
+    <updated>2020-06-01T02:24:39.215Z</updated>
+    
+    <content type="html"><![CDATA[<p>Install Ubuntu desktop under wsl2 is easy, just type the following command is enough:</p><pre><code>sudo apt-get install ubuntu-desktop</code></pre><p>When install is finished, shutdown the wsl service from windows cmd:</p><pre><code>wsl --shutdown</code></pre><p>Then you can launch the wsl instance again, and start <code>dbus</code> service:</p><pre><code>sudo /etc/init.d/dbus start</code></pre><p>Ubuntu desktop can be treated as a X11 client, you need run a x11 server in windows.<a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a> is not a bad choice. It's free andopen source.</p><p>After install VcXsrv, it will create a <code>XLaunch</code> shortcut on the desktop:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-1.png" alt=""></p><p>Double click it, you can select how to show the window:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-2.png" alt=""></p><p>and how to start client:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-3.png" alt=""></p><p>select <code>Disable access control</code> in <code>Extra settings</code> page so that Ubuntu desktop canconnect to:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-4.png" alt=""></p><p>You will see a blank window opened:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-5.png" alt=""></p><p>The title contains the x11 server address: <code>xybpc:3.0</code>. <code>xybpc</code> should be replacedby the ip address which can be accessed from WSL. There are multiple ways to get theip address. You can type <code>cat /etc/resolv.conf</code> to get the ip address of the nameserver:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-6.png" alt=""></p><p>Or type <code>ipconfig</code> in windows cmd to get the ip address of the WSL:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-7.png" alt=""></p><p>Now, in WSL, type the following command to start GNome shell:</p><pre><code>gnome-shell -d 172.23.16.1:3.0 --x11</code></pre><p>You should see the Ubuntu desktop now:</p><p><img src="/images/install-ubuntu-desktop-under-wsl2-8.png" alt=""></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Install Ubuntu desktop under wsl2 is easy, just type the following command is enough:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ubuntu-desktop
+</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://www.xyb.name/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Make VS Code work well under WSL2 with customized kernel</title>
+    <link href="https://www.xyb.name/2020/05/16/make-vs-code-work-well-under-wsl2-with-customized-kernel/"/>
+    <id>https://www.xyb.name/2020/05/16/make-vs-code-work-well-under-wsl2-with-customized-kernel/</id>
+    <published>2020-05-16T13:25:11.000Z</published>
+    <updated>2020-05-16T14:14:14.877Z</updated>
+    
+    <content type="html"><![CDATA[<p>Microsoft WSL2 is amazing. But the kernel of the official release version is out of date.Fortunately, <a href="/2020/03/14/build-your-kernel-for-wsl2/">you can build a new customized kernel and use it</a>.</p><p>Now, issue is comming. Under the new kernel, you will notice <a href="https://code.visualstudio.com/">VS Code</a> can'twork well. If you type <code>code</code> under WSL, you will see some garbage outpus. This is because VS code uses anaive way to detect the WSL kernel version. It requires the kernel version string follow this pattern:<code>x.xx.xx-microsoft-standard</code>. At mean while, its version comparing algorithm is too naive to get the rightresult. For example, if current kernel version is <code>4.19</code> and the new kernel version is <code>5.1</code>. VS code willthink the new kernel is older than the current kernel because <code>51</code> is smaller than <code>419</code>.</p><p>Wish VS Code can fix this issue in its newer release. But for now, we need do some hacking work. The easiestway is generating the same kernel version string as official WSL.</p><p>Let's goto <code>/usr/bin</code> folder, rename <code>uname</code> to <code>uname.real</code>. Then create a new <code>uname</code> file with the followingcontent:</p><pre><code>#!/bin/bashecho $(/usr/bin/uname.real $@ | sed -E s/[0-9]+.[0-9]+.[0-9]+-microsoft-wsl-xyb-port\\+/4.19.84-microsoft-standard/)</code></pre><p><code>-microsoft-wsl-xyb-port</code> is the version pattern of <a href="https://github.com/xieyubo/WSL2-Linux-Kernel/releases/tag/wsl-xyb-port-5.6.y-latest">my customized kernel</a>.You can replace it with the pattern used by your kernel.</p><p>Now, run <code>uname -r</code>, make sure you will see the following line:</p><pre><code>4.19.84-microsoft-standard</code></pre><p>Now, you can reinstall vscode-server:</p><ol><li>Under WSL, run <code>rm -rf ~/.vscode-server</code></li><li>Under Windows, run <code>wsl --shutdown</code> and goto <code>%userprofile%\.vscode\extensions</code>, delete <code>ms-vscode-remote.remote-wsl-xxx</code> folder.</li></ol><p>Re-launch WSL, go to any folder you want to open in VS Code, type <code>code .</code>. VS code should work as normal now.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Microsoft WSL2 is amazing. But the kernel of the official release version is out of date.
+Fortunately, &lt;a href=&quot;/2020/03/14/build-your-ke</summary>
+      
+    
+    
+    
+    
+    <category term="linux vscode" scheme="https://www.xyb.name/tags/linux-vscode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux Kernel Bug For HyperV</title>
+    <link href="https://www.xyb.name/2020/03/14/linux-kernel-bug-for-hyper-v/"/>
+    <id>https://www.xyb.name/2020/03/14/linux-kernel-bug-for-hyper-v/</id>
+    <published>2020-03-15T04:40:10.000Z</published>
+    <updated>2020-03-21T13:17:30.548Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today, I played my <a href="/2020/03/14/build-your-kernel-for-wsl2/">new version Linux kernel 5.5.9</a> on WSL2. Quickly, I hit a very interestingbug. Please see the following code</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::literals::chrono_literals;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> start = <span class="built_in">std</span>::chrono::high_resolution_clock::now();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">std</span>::chrono::high_resolution_clock::now() - start &lt; <span class="number">1</span>s);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>If you run the above code, you would get the following result:</p><pre><code>xyb@ubuntu:~$ time gcc a.cxyb@ubuntu:~$ time ./a.outreal    0m1.011suser    0m0.010s &lt;-- This is wrong!sys     0m0.000s</code></pre><p>The user time is just <code>0.010s</code>. It's a wrong value obviously. After a lot of investigation, I found it might be a bug in the latest Linux kernel.In linux, <a href="https://github.com/torvalds/linux/blob/d3dca69085e94e52a1d61a34b8e5f73a9f3d7eed/kernel/sched/clock.c#L60">the unit of <code>shced_clock()</code> should be nano seconds</a>, but in <code>hyperv_timer.c</code>, the unit, I believe, is 100 nano seconds.</p><p>I made a fix here: <a href="https://github.com/xieyubo/WSL2-Linux-Kernel/commit/85fc62846acb12a06b18f6e60bba849315f51d86">https://github.com/xieyubo/WSL2-Linux-Kernel/commit/85fc62846acb12a06b18f6e60bba849315f51d86</a>.After this fix, re-run the above application:</p><pre><code>xyb@ubuntu:~$ time ./a.outreal    0m1.003suser    0m0.999ssys     0m0.004s</code></pre><p>The value looks right now.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Today, I played my &lt;a href=&quot;/2020/03/14/build-your-kernel-for-wsl2/&quot;&gt;new version Linux kernel 5.5.9&lt;/a&gt; on WSL2. Quickly, I hit a very in</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://www.xyb.name/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Build Your Kernel For WSL2</title>
+    <link href="https://www.xyb.name/2020/03/14/build-your-kernel-for-wsl2/"/>
+    <id>https://www.xyb.name/2020/03/14/build-your-kernel-for-wsl2/</id>
+    <published>2020-03-14T15:16:26.000Z</published>
+    <updated>2020-04-01T15:14:52.395Z</updated>
+    
+    <content type="html"><![CDATA[<p>Windows 10 2004 will be released to public very soon. It has been released in Windows Insider Program for a long time.In this release, the biggest improvement to me is WSL2. In WSL2, windows actually hosted a virtual machine, and WSLis actually running inside the virtual machine. That means you can run a real linux kernel and even you can build yourkernel and run it. It's very convenient for study Linux kernel. You can very easily switch kernels.</p><p>Build linux kernel is actually very easy, you just need a Linux environment. Yes, you can also build a kernel in sideWSL. In this article, I'll use Ubuntu which is the one of the most popular Linux distribution. You need install thefollowing packages:</p><pre><code>sudo apt install g++ make flex bison libssl-dev libelf-dev bc</code></pre><p>Then you can download a copy of Linux kernel source code from <a href="https://www.kernel.org">https://www.kernel.org</a>. Currently,the official Microsoft WSL release uses 4.19.x. But I always like try new things, so let's download 5.5.9.</p><p>Use the following command to extract the kernel source code:</p><pre><code>tar xvf linux-5.5.9.tar.xzcd linux-5.5.9</code></pre><p>Now, you need a configure file. The config file saves the kernel options. Lot all of the kernel features are supportedby Windows. And some kernel features are used for kernel developer debug only. So you need the config file to turn offthose features. I think the best way to get the config file is copying from Microsoft WSL repository. Microsoft WSLteam has turned off those options for you already. You can download from <a href="https://github.com/microsoft/WSL2-Linux-Kernel/blob/master/Microsoft/config-wsl">https://github.com/microsoft/WSL2-Linux-Kernel/blob/master/Microsoft/config-wsl</a>.</p><p>Create a folder <code>Microsoft</code> under linux-5.5.9, and copy the put the config file in. Then you can build the kernel now:</p><pre><code>make KCONFIG_CONFIG=Microsoft/config-wsl</code></pre><p>If you use linux 4.19.x, I believe you won't hit any issue. But if you use linux 5.5.9 like me, you will be ask for somequestions also. This is because the config file you download is for 4.19.x, in 5.5.9, there are a lot of new options added.So you need answer &quot;Yes&quot; or &quot;No&quot; to enable or disable these new options. You can answer &quot;No&quot; for all questions, or you candownload the config file from my repository: <a href="https://github.com/xieyubo/WSL2-Linux-Kernel/blob/wsl-xyb-port-5.5.y/Microsoft/config-wsl">https://github.com/xieyubo/WSL2-Linux-Kernel/blob/wsl-xyb-port-5.5.y/Microsoft/config-wsl</a>.I've answered those questions for you already.</p><p>After build finish, you can copy the kernel to a windows folder. The name of the kernel file under build folder is <code>bzImage</code>,we rename it to <code>kernel</code> which is used in WSL2:</p><pre><code>cp arch/x86_64/boot/bzImage /mnt/c/temp/kernel</code></pre><p>Now our kernel is ready to use. But before we using it, please make sure you are enable WSL2 and switch your existed WSL instancesfrom WSL1 to WSL2. You can follow the instructions on <a href="http://aka.ms/wsl2">http://aka.ms/wsl2</a>.</p><p>OK, let's open a Windows cmd window and shutdown WSL2 virtual machine:</p><pre><code>wsl --shutdown</code></pre><p>Goto <code>C:\Windows\System32\lxss\tools</code>[^1] folder, use the new kernel file to replace the old one. Re-launch your WSL instance, type:</p><pre><code>uname -r</code></pre><p>You should see the kernel version is <code>5.5.9</code> now.</p><p><img src="/images/build-your-kernel-for-wsl2-1.png" alt=""></p><p><em><strong>Update on 2020-04-01</strong></em></p><p>Instead of replacing the original <code>kernel</code> file, you can also use global wsl2 configuration file.You can create a <code>.wslconfig</code> file under <code>%UserProfile%</code>, and put the following content:</p><pre><code>[wsl2]kernel=c:\\tmp\\kernel</code></pre><p>You must use absolute windows path and with escaped backslashes. So you can not use <code>\</code> in the path, must use <code>\\</code>. There are someother configurations you can specify, please check <a href="https://github.com/MicrosoftDocs/WSL/blob/live/WSL/release-notes.md">https://github.com/MicrosoftDocs/WSL/blob/live/WSL/release-notes.md</a>, search<code>.wslconfig</code>.</p><p>Some people might be confused: why the original kernel file is around 50 MB, but the new one is just around 9 MB? Do you rememberthe original name of the new kernel file is <code>bzImage</code>? <code>bzImage</code> is actually a kind of compressed file format. It compresses thereal kernel file (vmlinux which is around 50 MB), and adds code which can decompress the real kernel at runtime. The followingpicture comes from <a href="https://en.wikipedia.org/wiki/Vmlinux">https://en.wikipedia.org/wiki/Vmlinux</a> explain the relation ship between <code>vmlinux</code> and <code>bzImage</code> very clear:</p><p><img src="/images/Anatomy-of-bzimage.png" alt=""><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>Original path of this picture: <a href="https://en.wikipedia.org/wiki/Vmlinux#/media/File:Anatomy-of-bzimage.png">https://en.wikipedia.org/wiki/Vmlinux#/media/File:Anatomy-of-bzimage.png</a>. <a href="#fnref1" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Windows 10 2004 will be released to public very soon. It has been released in Windows Insider Program for a long time.
+In this release, t</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://www.xyb.name/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Executable File Can&#39;t Be Loaded in Ubuntu 19.10</title>
+    <link href="https://www.xyb.name/2020/02/22/executable-file-cant-be-loaded-in-ubuntu-1910/"/>
+    <id>https://www.xyb.name/2020/02/22/executable-file-cant-be-loaded-in-ubuntu-1910/</id>
+    <published>2020-02-23T04:42:28.000Z</published>
+    <updated>2020-02-23T05:09:29.095Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today, I found an interesting thing, the following code works well under Ubuntu 18.04,but failed under Ubuntu 19.10:</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dlfcn.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (dlopen(argv[<span class="number">0</span>], RTLD_NOW)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;dlopen() success\n&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;dlopen() failed: %s\n&quot;</span>, dlerror());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Under Ubuntu 19.10 (gcc 9.2.1), it will output:</p><pre><code>dlopen() failed:./a.out: cannot dynamically load position-independent executable</code></pre><p>After some investigation, I found it was caused by the behavior change in new glibc. In the new versionof glibc(&gt;=2.30), it adds a check: if the file is position independent executable (PIE flag is set inFLAGS_1 of Dynamic Secction in ELF structure), <code>dlopen()</code> will return failure. So the application can'tload itself anymore. I don't know what's the story at the back of this change. Security issue? Might be....</p><p>The workaround is quite straightforward, we only need clean up the <code>PIE</code> flag. Here is the sample code:</p><script src="https://gist.github.com/xieyubo/6820491646f9d01980a7eadb16564ddf.js"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Today, I found an interesting thing, the following code works well under Ubuntu 18.04,
+but failed under Ubuntu 19.10:&lt;/p&gt;
+&lt;figure class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://www.xyb.name/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Create WSL Distribution</title>
+    <link href="https://www.xyb.name/2020/02/21/create-wsl-distribution/"/>
+    <id>https://www.xyb.name/2020/02/21/create-wsl-distribution/</id>
+    <published>2020-02-21T21:27:22.000Z</published>
+    <updated>2020-03-28T16:28:57.758Z</updated>
+    
+    <content type="html"><![CDATA[<p>WSL is a great product of Microsoft. You can have a linux develop environment on your windows machine via WSL.But the official WSL distribution is a little old. For example, currently, the latest official WSL distributionof Ubuntu is 18.04 and the official Ubuntu release is 19.10. Ubuntu 20.04 is coming even.</p><p>I want to try the latest Ubuntu 20.04 on windows, so I have to build a WSL distribution by myself. In order toarchive this goal, I need find a Ubuntu 20.04 distribution as a basement. I notice there is an <a href="https://hub.docker.com/_/ubuntu/">Ubuntu 20.04docker image</a>. Docker image is a workable minimal system. It is a good basement.</p><p>Run the following command to pull an Ubuntu 20.04 docker image:</p><pre><code>docker pull ubuntu:20.04</code></pre><p>Then launch the image:</p><pre><code>docker run -t -i ubuntu:20.04</code></pre><p>You should see the prompt in your command window, it likes:</p><p><img src="/images/create-wsl-distribution-1.png" alt=""></p><p><code>root</code> is the current username logged in the docker image, <code>e09e3....</code> is the current docker container ID. It isgenerated randomly by docker runner. This ID is useful, we will use it later.</p><p>Docker image doesn't have <code>sudo</code> installed, let's install it:</p><pre><code>apt update &amp;&amp; apt install sudo</code></pre><p>Now, let's create the install package for WSL:</p><pre><code>cd /tar czf install.tar.gz *</code></pre><p>OK, the package is ready, let's exit the docker container and copy the package to local (remember replace <code>e09e3....</code> with your container ID):</p><pre><code>exitdocker cp e09e39085a63:/install.tar.gz .</code></pre><p>Create a folder to host the new WSL distribution, copy the package into the folder:</p><pre><code>md ubuntu-20.04copy install.tar.gz ubuntu-20.04</code></pre><p>Download the launcher from <a href="https://github.com/xieyubo/WSL-DistroLauncher/releases/download/10b787c/ubuntu18.04.exe">https://github.com/xieyubo/WSL-DistroLauncher/releases/download/10b787c/ubuntu18.04.exe</a> to that folder. You can alsochange the launcher name to <code>ubuntu20.04.exe</code> if you like. Now, the folder should be looks like:</p><p><img src="/images/create-wsl-distribution-2.png" alt=""></p><p>Double click <code>ubuntu28.04.exe</code>, that's all!</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;WSL is a great product of Microsoft. You can have a linux develop environment on your windows machine via WSL.
+But the official WSL distr</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://www.xyb.name/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Install Multiple WSL Instances</title>
+    <link href="https://www.xyb.name/2020/01/25/install-multiple-wsl-instances/"/>
+    <id>https://www.xyb.name/2020/01/25/install-multiple-wsl-instances/</id>
+    <published>2020-01-25T19:32:36.000Z</published>
+    <updated>2020-03-28T16:48:50.102Z</updated>
+    
+    <content type="html"><![CDATA[<p>First follow <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a> to install one WSL instance.It will download the Linux distribution package and install the required windows services.</p><p>Then open your registry editor, navigate to <code>Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss</code>.There is a subkey which name is a guid:</p><p><img src="/images/install-multiple-wsl-instances-1.png" alt=""></p><p>There is a package family name: <code>CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc</code>. Remove <code>_79rhkp1fndgsc</code> part,you can get the package name: <code>CanonicalGroupLimited.Ubuntu18.04onWindows</code>. Now, open <code>Powershell</code> type the following command:</p><pre><code>Get-AppxPackage CanonicalGroupLimited.Ubuntu18.04onWindows</code></pre><p>You will get the <code>InstallLocation</code> of this package:</p><p><img src="/images/install-multiple-wsl-instances-2.png" alt=""></p><p>Open that folder, there are two important files:</p><p><img src="/images/install-multiple-wsl-instances-3.png" alt=""></p><p><code>install.tar.gz</code> is the distribution package of Linux. <code>ubuntu1804.exe</code> is the launcher. When you try to launch WSL, the luncherwill invoke WSL api with distribution name to check whether the reqiured distribution is installed or not. If it is not installed,the luncher will invoke WSL api with distribution name and the path of the distribution package to install the WSL. Otherwise, itwill invoke the WSL api to active this distribution.</p><p>So in order to install multiple WSL instance, the key point is passing different distribution name to WSL api. Each WSL instanceshould have unique distribution name. Unfortunately, the distribution name is <a href="https://github.com/microsoft/WSL-DistroLauncher/blob/1f8551f7e2ea22bba2e6fb02f01e7a5f7fb757f3/DistroLauncher/DistributionInfo.h#L16">hard coded in the luncher</a>. We need modify the launcher by ourselves todifferent distribution name to WSL api.</p><p>I modified the luncher code in <a href="https://github.com/xieyubo/WSL-DistroLauncher">my fork</a>. It will use the folder name as the distributionname. So you can use my luncher to create multiple WSL instances easily.</p><p>For example, let's create a folder to hold the first WSL instance:</p><pre><code>mkdir d:\WSLs\wsl-1</code></pre><p>Copy <code>install.tar.gz</code> into that folder. And <a href="https://github.com/xieyubo/WSL-DistroLauncher/releases/download/10b787c/ubuntu18.04.exe">download the modified luncher</a>into that folder also. Run <code>ubuntu18.04.exe</code> from that folder. Because it is under <code>wsl-1</code> folder, so it will use <code>wsl-1</code> as thedistribution name. Due to we never install this distribution, the luncher will install it first, then active it.</p><blockquote><p>You can also directly download WSL distribution from <a href="https://aka.ms/wsl-ubuntu-1804">https://aka.ms/wsl-ubuntu-1804</a>. The file downloaded is actuallya zip file. You can use 7-zip to open it or change the file extention name to <code>.zip</code> and extract <code>install.targ.gz</code> directly.</p></blockquote><p>Then create a new folder to hold the second WSL instance:</p><pre><code>mkdir d:\WSLs\wsl-2</code></pre><p>Do the same steps and run <code>ubuntu18.04.exe</code> from <code>wsl-2</code> folder. It will use <code>wsl-2</code> as the distribution name. The same, it willinstall the distribution first and active it.</p><p>Use this way, you can create as many WSL instances as you want.</p><p><em><strong>Update on 2020-03-28</strong></em></p><p>I just noticed that Ubuntu actually has a minimal rootfs released: <a href="https://wiki.ubuntu.com/Base">Ubunt Base</a>.So we can use it to create WSL instance directly.</p><p>Let's download <a href="http://cdimage.ubuntu.com/ubuntu-base/releases/19.10/release/ubuntu-base-19.10-base-amd64.tar.gz.">Ubuntu Base 19.10</a>,change its name to <code>install.tar.gz</code> and copy it with <a href="https://github.com/xieyubo/WSL-DistroLauncher/releases/download/10b787c/ubuntu18.04.exe">our modified luncher</a>into a same folder: <code>D:\ubuntu-19.10</code>. Double click the launcher. It will create a new WSL instance named as <code>ubuntu-19.10</code> for us.</p><p>There is no <code>sudo</code> in the minimal rootfs, so we need install it maunally. Open a cmd window from Windows and run the following command:</p><pre><code>wsl -d ubuntu-19.10 -u root apt updatewsl -d ubuntu-19.10 -u root apt install sudo</code></pre><p>Your new WSL instance is ready to use now.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;First follow &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/wsl/install-win10&quot;&gt;https://docs.microsoft.com/en-us/windows/wsl/install-wi</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://www.xyb.name/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cross Build FFmpeg &amp; FFplay for Windows</title>
+    <link href="https://www.xyb.name/2020/01/25/cross-build-ffmpeg-and-ffplay/"/>
+    <id>https://www.xyb.name/2020/01/25/cross-build-ffmpeg-and-ffplay/</id>
+    <published>2020-01-25T16:55:26.000Z</published>
+    <updated>2020-02-04T12:16:27.943Z</updated>
+    
+    <content type="html"><![CDATA[<p>Note: The following example is building for 32 bits. If you want to build for 64 bits, please use<code>x86_64-w64-mingw32</code> instead of <code>i686-w64-mingw32</code>.</p><h3 id="Build-FFmpeg">Build FFmpeg</h3><p>Install the following packages:</p><pre><code>sudo apt-get updatesudo apt-get install make nasm gcc mingw-w64</code></pre><p>Build:</p><pre><code>./configure --arch=x86 --target-os=mingw32 --cross-prefix=i686-w64-mingw32- --prefix=/mnt/d/src/ffmpeg/build.d/win/x86make -j`nproc` -ssudo make install</code></pre><h3 id="Build-FFplay">Build FFplay</h3><p>Build SDL2 first:</p><pre><code>cd /tmpwget https://www.libsdl.org/release/SDL2-2.0.10.tar.gztar xvzf SDL2-2.0.10.tar.gzcd SDL2-2.0.10./configure --prefix=/usr/sdl2-win32 --host=i686-w64-mingw32make -j`nproc` -ssudo make install</code></pre><p>Make a symbol link to i686-w64-mingw32-sdl2-config:</p><pre><code>sudo ln -s /usr/sdl2-win32/bin/sdl2-config /usr/bin/i686-w64-mingw32-sdl2-config</code></pre><p>Now reconfig FFmpeg, it will enable ffplay automatically:</p><pre><code>./configure --arch=x86 --target-os=mingw32 --cross-prefix=i686-w64-mingw32- --prefix=/mnt/d/src/ffmpeg/build.d/win/x86make -j`nproc` -ssudo make install</code></pre><h3 id="Copy-dependencies-and-run">Copy dependencies and run</h3><p>Copy required DLLs before running:</p><pre><code>cp /usr/sdl2-win32/bin/SDL2.dll /mnt/d/src/ffmpeg/build.d/win/x86/bin/cp /usr/lib/gcc/i686-w64-mingw32/7.3-win32/libgcc_s_sjlj-1.dll /mnt/d/src/ffmpeg/build.d/win/x86/bin/</code></pre><p>You can run ffmpeg &amp; ffplay from windows now.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Note: The following example is building for 32 bits. If you want to build for 64 bits, please use
+&lt;code&gt;x86_64-w64-mingw32&lt;/code&gt; instead</summary>
+      
+    
+    
+    
+    
+    <category term="ffmpeg" scheme="https://www.xyb.name/tags/ffmpeg/"/>
+    
+  </entry>
+  
+</feed>
