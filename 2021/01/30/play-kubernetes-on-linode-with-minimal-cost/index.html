@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="xyb,xyb@xyb.name"><title>Play Kubernetes On Linode With Minimal Cost · XYB</title><meta name="description" content="Kubernetes is awesome. And Linode Kubernetes Engine (LKE) is also
+an awesome kubernetes service. It's versy simple to management and cost is very low."><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script data-ad-client="ca-pub-2338350216618507" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="http://www.gravatar.com/avatar/09b75901b7c35bfe331d7e7fb3721b1b?s=127" style="width:127px;border-radius:127px"><h3 title=""><a href="/">XYB</a></h3><div class="description"><p>Tech changes the world.</p></div></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://www.feedreader.org/?feed=https://www.xyb.name/atom.xml"><i class="fa fa-rss"></i></a></li><li><a target="_blank" rel="noopener" href="http://github.com/xieyubo"><i class="fa fa-github"></i></a></li><li><a href="mailto:xyb@xyb.name"><i class="fa fa-at"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a target="_blank" rel="noopener" href="https://www.caicai.me"> CaiCai</a><span>,</span><a target="_blank" rel="noopener" href="https://github.com/Ben02/hexo-theme-Anatole"> Ben </a><span>&</span><a target="_blank" rel="noopener" href="https://github.com/xieyubo/hexo-theme-Anatole"> xyb</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h2><a>Play Kubernetes On Linode With Minimal Cost</a></h2></div><div class="post-content"><p><a target="_blank" rel="noopener" href="https://kubernetes.io/">Kubernetes</a> is awesome. And <a target="_blank" rel="noopener" href="https://www.linode.com/products/kubernetes/">Linode Kubernetes Engine (LKE)</a> is also
+an awesome kubernetes service. It's versy simple to management and cost is very low. The lowest node which comes with 1 Core and 2 GB RAM is
+just $10/month. But by default, your services run on kubernetes are not accessible from public network. A normal solution is that you need
+configure a load balancer service on kubernetes. It will create a <a target="_blank" rel="noopener" href="https://www.linode.com/products/nodebalancers/">NodeBalancer</a> on Linode
+which will cost you additional $10/month. Then the total cost will be increased to $20/month.</p>
+<p>The node used in LKE is a normal <a target="_blank" rel="noopener" href="https://www.linode.com/products/shared/">Linode VM</a>. Every Linode VM comes with a public ip which can be
+accessed from public network. So theoretically, you don't need an isolated load balancer. You can run <a target="_blank" rel="noopener" href="https://nginx.org/">Nginx</a> as a load
+balancer on the node. Nginx can expose your services to public network. Then your minimal cost is still $10/month. This article will try to
+demonstrate this idea.</p>
+<p>First, let's register an account on <a target="_blank" rel="noopener" href="https://www.linode.com/?r=cf7cfcc5ea862ef6452a0c5d1d85243a90c7fc73">www.linode.com</a>. I'll appreciate you
+if you can register with my referral code: cf7cfcc5ea862ef6452a0c5d1d85243a90c7fc73 😃. You can also search linode coupons on the internet.
+Sometimes you can get $100 credit for 60 days or $10 unexpired credit.</p>
+<p>After login your account, select <code>Kubernetes</code> on the left navigation column, and select <code>Crete a Cluster</code> button on the top-right. You need
+assign the Label, Region and Kubernetes Version to your cluster, and create a Node Pools. Let's just add one node in <code>Linode 2GB</code> plan. On
+the right side, you can see the cost is <code>$10/mo</code>.</p>
+<p><img src="/images/play-kubernetes-on-linode-with-minimal-cost-1.png" alt=""></p>
+<p>Once you click <code>Create Cluster</code> button, you will be navigated to Kubernetes management page. You will see your kubernetes cluster is under
+provisioning. When it finishes you can download your <code>Kubeconfig</code> file. Later, you need this file to connect to your cluster.</p>
+<p><img src="/images/play-kubernetes-on-linode-with-minimal-cost-2.png" alt=""></p>
+<p>We need login to the node to install our load balancer, so we need reset the root password of the node. Click <code>Linodes</code> on the left navigation
+column, select the node just created by kubernetes, click <code>Power Off</code>. Then go to <code>Settings</code> tab to <code>Reset Root Password</code>:</p>
+<p><img src="/images/play-kubernetes-on-linode-with-minimal-cost-3.png" alt=""></p>
+<p>After that, click <code>Power On</code> to restart the node.</p>
+<p>Now, let's install kubectl client. You can install it on different platforms. Here, we use Ubuntu:</p>
+<pre><code>curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo &quot;deb http://apt.kubernetes.io/ kubernetes-xenial main&quot; &gt;&gt; ~/kubernetes.list
+sudo mv ~/kubernetes.list /etc/apt/sources.list.d
+sudo apt update
+sudo apt install kubectl
+</code></pre>
+<p>Row the following commands:</p>
+<pre><code>export KUBECONFIG=~/minimal-cost-kubernetes-kubeconfig.yaml
+kubectl get nodes -o wide
+</code></pre>
+<p>If you can see the similiar line, congratulations, your kubernetes cluster is ready to use.</p>
+<pre><code>NAME                          STATUS   ROLES    AGE   VERSION    INTERNAL-IP      EXTERNAL-IP    OS-IMAGE                       KERNEL-VERSION         CONTAINER-RUNTIME
+lke18041-22740-6015885e18ff   Ready    &lt;none&gt;   17m   v1.18.15   192.168.215.40   50.116.13.95   Debian GNU/Linux 9 (stretch)   5.10.0-2-cloud-amd64   docker://18.9.9
+</code></pre>
+<p>If you see the <code>STATUS</code> is <code>NotReady</code>, most likely the restarting work is not finish. You can just wait for some seconds and try the command
+again.</p>
+<p>Now, lets create a service. Create a file <code>~/test-service.yaml</code> with the following content:</p>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-service
+  labels:
+    app: test-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-service
+  template:
+    metadata:
+      labels:
+        app: test-service
+  spec:
+    containers:
+    - name: test-service
+      image: k8s.gcr.io/ningx:latest
+      imagePullPolicy: Always
+      ports:
+      - containerPort: 80
+</code></pre>
+<p>Run <code>kubectl apply -f ~/test-service.yaml</code>, you should see this line in the output:</p>
+<pre><code>deployment.apps/test-service created
+</code></pre>
+<p>Run <code>kubectl get pods -o wide</code>, you should see:</p>
+<pre><code>NAME                            READY   STATUS             RESTARTS   AGE   IP         NODE                          NOMINATED NODE   READINESS GATES
+test-service-6bf7656ff9-vb45s   0/1     ImagePullBackOff   0          6m    10.2.0.6   lke18041-22740-6015885e18ff   &lt;none&gt;           &lt;none&gt;
+</code></pre>
+<p>Now the service is running, but we can't access from the external. In order to expose the service to external, we need create
+a <code>NodePort</code> service. <code>NodePort</code> service is a kubernetes service, it will expose a port on <strong>every</strong> node. When you send the
+request to the <node-ip>:<node-port>, the request will be forwared to the service in kubernetes. Let's create a file <code>~/test-nodeport.yaml</code>
+with the following content:</p>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: test-service-nodeport
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 80
+    nodePort: 30000
+  selector:
+    app: test-service
+</code></pre>
+<p>Run <code>kubectl apply -f ~/test-nodeport.yaml</code>, you should see this line in the output:</p>
+<pre><code>service/test-service-nodeport created
+</code></pre>
+<p>Run <code>kubectl get services -o wide</code>, you should see</p>
+<pre><code>NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE   SELECTOR
+kubernetes              ClusterIP   10.128.0.1      &lt;none&gt;        443/TCP          42m   &lt;none&gt;
+test-service-nodeport   NodePort    10.128.96.160   &lt;none&gt;        8080:30000/TCP   99s   app=test-service
+</code></pre>
+<p>That means the nodeport service is running now.</p>
+<p>Let's explain a little more about the three ports in the <code>test-nodeport.yaml</code> file. The <code>port</code> is the port of the cluster ip. It is an address
+which can only be accessed inside the cluster. The <code>targetPort</code> is the port of the application runs inside the cluster. Normally, it is the
+container port which is exposed. Like we specific <code>containerPort: 80</code> in <code>~/test-service.yaml</code>. The <code>nodePort</code> is the port exposed on <strong>every</strong>
+node in the cluster. It is accessible via <NodeIp>:<NodePort> from outside the cluster. For example, our nodePort is 30000, and the external
+ip of the node is <code>50.116.13.95</code>. So you can open your blowser from local to access the address: <a target="_blank" rel="noopener" href="http://50.116.13.95:30000">http://50.116.13.95:30000</a>:</p>
+<p><img src="/images/play-kubernetes-on-linode-with-minimal-cost-4.png" alt=""></p>
+<p>The request send to 50.116.13.95:30000 will be routed to <ClusterIP>:8080 first. At this step, the request has been routed from the external
+network to internal network. Then the request will be routed to the port (80) of the container which runs the application.</p>
+<p>OK, your service can be accessed from the public network now. Then the only left thing is just login your node, install nginx and configre
+it as a load balancer or reverse proxy which forwards the request from <a target="_blank" rel="noopener" href="http://50.116.13.95">http://50.116.13.95</a> to <a target="_blank" rel="noopener" href="http://50.116.13.95:30000">http://50.116.13.95:30000</a>. There are a lot of
+examples about how to config nginx in the network, you can search it.</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2021-01-30</span><i class="fa fa-comment-o"></i><a href="/2021/01/30/play-kubernetes-on-linode-with-minimal-cost/#comments">Comments</a><i class="fa fa-tag"></i><a class="tag" href="/tags/kubernetes/" title="kubernetes">kubernetes </a><a class="tag" href="/tags/k8s/" title="k8s">k8s </a><a class="tag" href="/tags/linode/" title="linode">linode </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/08/02/correct-localtime-in-blazor-webassembly/" title="Correct Local Time In Blazor Webassembly">next_post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'www-xyb-name';
+var disqus_identifier = '2021/01/30/play-kubernetes-on-linode-with-minimal-cost/';
+var disqus_title = 'Play Kubernetes On Linode With Minimal Cost';
+var disqus_url = 'https://www.xyb.name/2021/01/30/play-kubernetes-on-linode-with-minimal-cost/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-156902054-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-156902054-1');</script></body></html>
